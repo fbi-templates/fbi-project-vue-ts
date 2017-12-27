@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import {$apis, $util, $document, $lodash} from './helpers/index'
 import filters from './filters'
-import Icon from 'components/basic/Icon/Icon.vue'
+// import Icon from 'components/basic/Icon/Icon.vue'
 
 const globalHelper = {
   $apis: $apis,
@@ -11,7 +11,7 @@ const globalHelper = {
 }
 
 const globalComponent = {
-  'v-icon': Icon
+  // 'v-icon': Icon
 }
 
 // register global helper, use it in vue component just like `this.$apis.xxx`

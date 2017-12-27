@@ -1,7 +1,7 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-import values from 'lodash/values'
-import beforeEachHooks from './beforeEachHooks'
+// import values from 'lodash/values'
+// import beforeEachHooks from './beforeEachHooks'
 import Index from '../views/Index.vue'
 
 Vue.use(Router)
@@ -23,8 +23,8 @@ const routerInstance = new Router({
   ]
 })
 
-values(beforeEachHooks).forEach(hook => {
-  routerInstance.beforeEach(hook)
-})
+// values(beforeEachHooks).forEach(hook => {
+//   routerInstance.beforeEach(hook)
+// })
 
 export default routerInstance
