@@ -1,5 +1,3 @@
-import * as getters from './getters'
-
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
