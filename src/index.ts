@@ -1,10 +1,8 @@
-import './static/css/base.css'
+import './class-component-hooks'
 import App from './App.vue'
 import Vue from 'vue'
 import router from './router/index'
-// import store from './store'
 import global from './global'
-// import {sync} from 'vuex-router-sync'
 
 // sync(store, router)
 global.init()
