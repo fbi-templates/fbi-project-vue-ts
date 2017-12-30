@@ -89,7 +89,7 @@ module.exports = {
       ],
       'babel-preset-stage-1'
     ],
-    plugins: ["lodash"]
+    plugins: ["lodash", "transform-decorators-legacy"]
   },
 
   // Postcss config (plugin-name: plugin-options)

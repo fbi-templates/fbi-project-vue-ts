@@ -4,23 +4,25 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Component, Prop} from 'vue-property-decorator'
+import Component from 'vue-class-component'
 
-@Component
+@Component({
+  props: {
+    text: String
+  }
+})
 export default class Typing extends Vue {
   showingText = ''
-  index = 0
-
-  @Prop() text:string
+  index:number = 0
 
   typing() {
-    if (this.index <= this.text.length) {
-      this.showingText = this.text.slice(0, this.index)
-      this.index++
-    } else {
-      return
-    }
-    setTimeout(this.typing, 100)
+  if (this.index <= this['text'].length) {
+    this.showingText = this['text'].slice(0, this.index)
+    this.index++
+  } else {
+    return
+  }
+  setTimeout(this.typing, 100)
   }
 
   mounted () {

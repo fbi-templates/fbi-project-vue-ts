@@ -4,36 +4,17 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Component, Prop} from 'vue-property-decorator'
+import Component from 'vue-class-component'
 
-@Component
-export default class Typing extends Vue {
-  @Prop() name:string
-
-  get iconClass() {
-    return 'icon-' + this.name
+@Component({
+  props: {
+    name: String
   }
+})
+export default class Icon extends Vue {
+  iconClass = 'icon-' + this['name']
   get iconTarget() {
-    return require(`src/static/icons/icon-${this.name}.png`)
+    return require(`src/static/icons/icon-${this['name']}.png`)
   }
 }
-// export default {
-//   data () {
-//     return {
-//       iconClass: 'icon-' + this.name
-//     }
-//   },
-//   props: {
-//     name: {
-//       type: String,
-//       required: true,
-//       default: ''
-//     }
-//   },
-//   computed: {
-//     iconTarget() {
-//       return require(`src/static/icons/icon-${this.name}.png`)
-//     }
-//   }
-// }
 </script>
