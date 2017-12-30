@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import {$apis, $util, $document, $lodash} from './helpers/index'
 import filters from './filters'
-import Icon from 'components/basic/Icon/Icon.vue'
+import Icon from 'components/basic/Icon.vue'
 
 const globalHelper = {
   $apis: $apis,

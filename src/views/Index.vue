@@ -22,7 +22,7 @@ export default class Index extends Vue {
   icons = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
 
   mounted () {
-    console.log('children mounted')
+    console.log('Index mounted')
   }
 }
 </script>
