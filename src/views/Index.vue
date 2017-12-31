@@ -9,26 +9,36 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { $apis } from '@/helpers/index'
 import { Component } from 'vue-property-decorator'
 import Typing from 'components/partials/Typing.vue'
 import { Getter, namespace } from 'vuex-class'
-const ModuleGetter = namespace('user', Getter)
+const ModuleUser = namespace('user', Getter)
 
 @Component({
   components: {
     Typing
   }
 })
-
 export default class Index extends Vue {
   // data
-  icons = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
+  icons:string[] = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
 
   // getters
-  @ModuleGetter('text') text
+  @ModuleUser('text') text
+
+  // methods
+  fetch() {
+    $apis.getSomeThing({test: 123}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 
   // hooks
   mounted () {
+    this.fetch()
     console.log('Index mouted')
   }
 }

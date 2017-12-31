@@ -24,7 +24,7 @@ function requestHandle(params) {
 }
 
 export default {
-  post: function(url, params) {
+  post: function(url:string, params:{}) {
     return requestHandle({
       method: 'post',
       url: url,
@@ -34,7 +34,7 @@ export default {
       }
     })
   },
-  get: function(url, params) {
+  get: function(url:string, params:{}) {
     return requestHandle({
       method: 'get',
       url: $util.queryString(url, params)

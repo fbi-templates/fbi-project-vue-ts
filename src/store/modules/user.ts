@@ -1,3 +1,9 @@
+interface User {
+  name: number
+  age: number,
+  word: string
+}
+
 const state = {
   text: 'hello world'
 }

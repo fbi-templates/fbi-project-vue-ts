@@ -61,6 +61,12 @@ $ fbi <task> [params]
 - [Official templates](https://github.com/fbi-templates)
 - [`fbi` documentation](https://neikvon.gitbooks.io/fbi/content/)
 
+## Reference
+- [vue + typescript 项目起手式](https://segmentfault.com/a/1190000011744210)
+- [vue + typescript 进阶篇](https://segmentfault.com/a/1190000011878086)
+- [Vue with TypeScript](https://segmentfault.com/a/1190000010641821)
+- [typescript 文档](https://www.tslang.cn/docs/handbook/basic-types.html)
+
 ## License
 [MIT](https://opensource.org/licenses/MIT)
 
