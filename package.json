@@ -1,6 +1,6 @@
 {
-  "name": "fbi-project-vue",
-  "version": "3.0.0",
+  "name": "fbi-project-vue-ts",
+  "version": "1.2.1",
   "description": "A modern fbi template which uses Vue.js and Typescript",
   "scripts": {
     "release-patch": "npm version patch && git push && git push --tags",
@@ -107,10 +107,6 @@
       "serve": {
         "alias": "s",
         "desc": "Compile and start development server."
-      },
-      "analyz": {
-        "alias": "analyz",
-        "desc": "Generate file performance report"
       }
     }
   },
