@@ -3,14 +3,14 @@ import qs from 'qs'
 import { $util } from '../index'
 
 function requestHandle(params) {
+  console.log(`------request ${params.url} start------\n`)
   if (params.method === 'post') {
     params.data = qs.stringify(params.data)
+    console.log(params.data)
   }
-  console.log(`------request ${params.url} start------\n`)
-  console.log(params.data)
   return new Promise(function(resolve, reject){
     axios(params).then(res => {
-      console.log(`------response ${params.url} start------\n`)
+      console.log(`------request ${params.url} end------\n`)
       console.log(res.data)
       if (res.data.code === 0) {
         resolve(res.data)

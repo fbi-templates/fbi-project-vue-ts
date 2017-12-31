@@ -1,7 +1,7 @@
 {
   "name": "fbi-project-vue",
   "version": "3.0.0",
-  "description": "SPA using Vue.js",
+  "description": "A modern fbi template which uses Vue.js and Typescript",
   "scripts": {
     "release-patch": "npm version patch && git push && git push --tags",
     "release-minor": "npm version minor && git push && git push --tags",
@@ -11,10 +11,13 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
+    "@types/node": "^8.5.2",
     "axios": "^0.17.1",
     "lodash": "^4.17.4",
     "qs": "^6.5.1",
     "vue": "^2.5.9",
+    "vue-class-component": "^6.1.2",
+    "vue-property-decorator": "^5.3.0",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.9",
     "vuex": "^3.0.1",
@@ -23,7 +26,6 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^8.5.2",
     "autoprefixer": "7.2.1",
     "babel-core": "6.26.0",
     "babel-eslint": "8.0.3",
@@ -65,10 +67,8 @@
     "uglifyjs-webpack-plugin": "1.1.2",
     "url-loader": "0.6.2",
     "validate-commit-msg": "^2.14.0",
-    "vue-class-component": "^6.1.2",
     "vue-html-loader": "1.2.4",
     "vue-loader": "13.5.0",
-    "vue-property-decorator": "^5.3.0",
     "webpack": "3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "1.12.2",

@@ -2,7 +2,7 @@ import $ajax from './ajax'
 
 const API_ROOT =  process.env.NODE_ENV === 'dev' ? '' : 'http://www.example.com'
 function requestUrl (path:string) {
-  return `/api/${path}`
+  return `/proxy/${path}`
 }
 
 export default {
