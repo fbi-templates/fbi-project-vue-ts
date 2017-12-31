@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <typing :text="'hello world'"/>
+    <typing :text="text"/>
     <div class="face-wrap">
       <v-icon v-for="(name, index) in icons" :key="index" :name="name" />
     </div>
@@ -9,8 +9,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Component from 'vue-class-component'
+import { Component } from 'vue-property-decorator'
 import Typing from 'components/partials/Typing.vue'
+import Test from 'components/partials/Test.vue'
 
 @Component({
   components: {
@@ -20,7 +21,7 @@ import Typing from 'components/partials/Typing.vue'
 
 export default class Index extends Vue {
   icons = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
-
+  text = '123'
   mounted () {
     console.log('Index mounted')
   }

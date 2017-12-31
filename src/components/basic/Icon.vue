@@ -4,15 +4,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Component from 'vue-class-component'
+import { Component, Prop } from 'vue-property-decorator'
 
-@Component({
-  props: {
-    name: String
-  }
-})
+@Component
 export default class Icon extends Vue {
   iconClass = 'icon-' + this['name']
+
+  @Prop()
+  name:string
+
   get iconTarget() {
     return require(`src/static/icons/icon-${this['name']}.png`)
   }
