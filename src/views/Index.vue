@@ -11,7 +11,8 @@
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import Typing from 'components/partials/Typing.vue'
-import Test from 'components/partials/Test.vue'
+import { Getter, namespace } from 'vuex-class'
+const ModuleGetter = namespace('user', Getter)
 
 @Component({
   components: {
@@ -20,10 +21,15 @@ import Test from 'components/partials/Test.vue'
 })
 
 export default class Index extends Vue {
+  // data
   icons = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
-  text = '123'
+
+  // getters
+  @ModuleGetter('text') text
+
+  // hooks
   mounted () {
-    console.log('Index mounted')
+    console.log('Index mouted')
   }
 }
 </script>

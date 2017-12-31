@@ -8,17 +8,21 @@ import { Component, Prop, Watch } from 'vue-property-decorator'
 
 @Component
 export default class Typing extends Vue {
+  // data
   showingText:string = ''
   index:number = 0
 
+  // prop
   @Prop({default: 'hello'})
   text:string
 
+  // watch
   @Watch('showingText')
   onShowingTextChange(newVal) {
     console.log(newVal)
   }
 
+  // methods
   typing() {
     if (this.index <= this['text'].length) {
       this.showingText = this['text'].slice(0, this.index)
@@ -29,6 +33,7 @@ export default class Typing extends Vue {
     setTimeout(this.typing, 100)
   }
 
+  // hooks
   mounted() {
     this.typing()
   }
@@ -44,5 +49,6 @@ export default class Typing extends Vue {
   font-size: 100px;
   text-align: center;
   transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 </style>

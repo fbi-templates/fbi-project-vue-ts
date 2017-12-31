@@ -1,5 +1,5 @@
 const state = {
-  name: ''
+  text: 'hello world'
 }
 
 const mutations = {
@@ -11,9 +11,14 @@ const mutations = {
 const actions = {
 }
 
+const getters = {
+  text: state => state.text
+}
+
 export default {
   namespaced: true,
   state,
   actions,
-  mutations
+  mutations,
+  getters
 }

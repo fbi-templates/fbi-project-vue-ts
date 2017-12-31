@@ -1,6 +1,7 @@
 import './class-component-hooks'
 import App from './App.vue'
 import Vue from 'vue'
+import store from './store/index'
 import router from './router/index'
 import global from './global'
 
@@ -9,7 +10,7 @@ global.init()
 
 const app = new Vue({
   router,
-  // store,
+  store,
   ...App
 })
 
