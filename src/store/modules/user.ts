@@ -1,6 +1,6 @@
 interface User {
   name: number
-  age: number,
+  age: number
   word: string
 }
 
@@ -14,8 +14,7 @@ const mutations = {
   }
 }
 
-const actions = {
-}
+const actions = {}
 
 const getters = {
   text: state => state.text

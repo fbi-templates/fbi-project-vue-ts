@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <typing :text="text"/>
+    <typing :text="text" />
     <div class="face-wrap">
       <v-icon v-for="(name, index) in icons" :key="index" :name="name" />
     </div>
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { $apis } from '@/helpers/index'
+import { $apis } from 'src/helpers/index'
 import { Component } from 'vue-property-decorator'
 import Typing from 'components/partials/Typing.vue'
 import { Getter, namespace } from 'vuex-class'
@@ -22,14 +22,14 @@ const ModuleUser = namespace('user', Getter)
 })
 export default class Index extends Vue {
   // data
-  icons:string[] = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
+  icons: string[] = ['face-1', 'face-2', 'face-3', 'face-4', 'face-5']
 
   // getters
   @ModuleUser('text') text
 
   // methods
   fetch() {
-    $apis.getSomeThing({test: 123}).then(res => {
+    $apis.getSomeThing({ test: 123 }).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
@@ -37,7 +37,7 @@ export default class Index extends Vue {
   }
 
   // hooks
-  mounted () {
+  mounted() {
     this.fetch()
     console.log('Index mouted')
   }

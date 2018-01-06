@@ -39,15 +39,20 @@ module.exports = {
 
   // Resolve alias e.g: import '../../components/x' => import 'components/x'
   alias: {
-    '@': path.join(process.cwd(), 'src'),
     src: path.join(process.cwd(), 'src'),
     components: path.join(process.cwd(), 'src/components'),
     views: path.join(process.cwd(), 'src/views'),
     helpers: path.join(process.cwd(), 'src/helpers'),
     vue: path.join(process.cwd(), 'node_modules/vue/dist/vue.min.js'),
     vuex: path.join(process.cwd(), 'node_modules/vuex/dist/vuex.min.js'),
-    'vue-router': path.join(process.cwd(), 'node_modules/vue-router/dist/vue-router.min.js'),
-    'vuex-router-sync': path.join(process.cwd(), 'node_modules/vuex-router-sync/index.js')
+    'vue-router': path.join(
+      process.cwd(),
+      'node_modules/vue-router/dist/vue-router.min.js'
+    ),
+    'vuex-router-sync': path.join(
+      process.cwd(),
+      'node_modules/vuex-router-sync/index.js'
+    )
   },
 
   // Webpack module noParse Docs:
@@ -65,13 +70,9 @@ module.exports = {
       // code style: https://github.com/airbnb/javascript Docs:
       // http://eslint.org/docs/user-guide/configuring
       rules: {
-        semi: [
-          'error', 'never'
-        ],
+        semi: ['error', 'never'],
         'no-console': [0],
-        'no-debugger': process.env.NODE_ENV === 'production'
-          ? 'error'
-          : 'off'
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
       }
     }
   },
@@ -82,7 +83,8 @@ module.exports = {
     babelrc: false,
     presets: [
       [
-        'babel-preset-env', {
+        'babel-preset-env',
+        {
           targets,
           modules: false,
           useBuiltIns: true
@@ -90,7 +92,7 @@ module.exports = {
       ],
       'babel-preset-stage-1'
     ],
-    plugins: ["lodash", "transform-decorators-legacy"]
+    plugins: ['lodash', 'transform-decorators-legacy']
   },
 
   // Postcss config (plugin-name: plugin-options)

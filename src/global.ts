@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import {$apis, $util, $document, $lodash} from './helpers/index'
-import filters from '@/filters'
-import Icon from '@/components/basic/Icon.vue'
+import { $apis, $util, $document, $lodash } from './helpers/index'
+import filters from 'src/filters'
+import Icon from 'src/components/basic/Icon.vue'
 
 const globalHelper = {
   $apis: $apis,
@@ -17,7 +17,7 @@ const globalComponent = {
 // register global helper, use it in vue component just like `this.$apis.xxx`
 function initGlobalHelper() {
   for (let key in globalHelper) {
-    Object.defineProperty(Vue.prototype, key, {value: globalHelper[key]})
+    Object.defineProperty(Vue.prototype, key, { value: globalHelper[key] })
   }
 }
 
@@ -36,7 +36,7 @@ function initFilters() {
 }
 
 export default {
-  init: function () {
+  init: function() {
     initGlobalHelper()
     initGlobalComponent()
     initFilters()
