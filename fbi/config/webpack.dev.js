@@ -11,20 +11,21 @@ const config = {
         use: {
           loader: 'vue-loader',
           options: {
-            esModule: false,
             loaders: {
               js: [
                 {
                   loader: 'babel-loader',
                   options: ctx.options.babel
                 }
+              ],
+              css: [
+                'vue-style-loader',
+                { loader: 'css-loader', options: { sourceMap: true } }
+              ],
+              postcss: [
+                'vue-style-loader',
+                { loader: 'css-loader', options: { sourceMap: true } }
               ]
-            },
-            postcss: {
-              ident: 'postcss',
-              plugins: Object.keys(ctx.options.postcss).map(item => {
-                return require(`${item}`)(ctx.options.postcss[item])
-              })
             }
           }
         }
@@ -32,15 +33,14 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          'vue-style-loader',
           {
-            loader: 'postcss-loader',
+            loader: 'css-loader',
             options: {
-              ident: 'postcss',
-              plugins: Object.keys(ctx.options.postcss).map(item => {
-                return require(`${item}`)(ctx.options.postcss[item])
-              })
+              // enable CSS Modules
+              modules: true,
+              // customize generated class names
+              localIdentName: '[local]_[hash:base64:8]'
             }
           }
         ]

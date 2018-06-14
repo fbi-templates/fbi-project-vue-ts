@@ -4,6 +4,10 @@ const targets = {
   browsers: ['last 2 versions', 'safari >= 7', 'ie > 8']
 }
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   server: {
     root: 'dist',
@@ -39,10 +43,7 @@ module.exports = {
 
   // Resolve alias e.g: import '../../components/x' => import 'components/x'
   alias: {
-    src: path.join(process.cwd(), 'src'),
-    components: path.join(process.cwd(), 'src/components'),
-    views: path.join(process.cwd(), 'src/views'),
-    helpers: path.join(process.cwd(), 'src/helpers'),
+    '@': resolve('src'),
     vue: path.join(process.cwd(), 'node_modules/vue/dist/vue.min.js'),
     vuex: path.join(process.cwd(), 'node_modules/vuex/dist/vuex.min.js'),
     'vue-router': path.join(
@@ -65,7 +66,7 @@ module.exports = {
 
   // ESlint config
   eslint: {
-    status: 'on', // `on`: turn on; others: turn off
+    status: 'off', // `on`: turn on; others: turn off
     options: {
       // code style: https://github.com/airbnb/javascript Docs:
       // http://eslint.org/docs/user-guide/configuring
@@ -90,14 +91,8 @@ module.exports = {
           useBuiltIns: true
         }
       ],
-      'babel-preset-stage-1'
+      'babel-preset-stage-2'
     ],
-    plugins: ['lodash', 'transform-decorators-legacy']
-  },
-
-  // Postcss config (plugin-name: plugin-options)
-  postcss: {
-    autoprefixer: targets,
-    precss: {}
+    plugins: ['transform-decorators-legacy']
   }
 }

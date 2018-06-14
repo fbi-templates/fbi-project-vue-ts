@@ -1,12 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "es5",
-      "es6",
-      "es7",
-      "es2015.promise"
-    ],
+    "lib": ["dom", "es5", "es6", "es7", "es2015.promise"],
     "module": "es2015",
     "moduleResolution": "node",
     "target": "es5",
@@ -14,11 +8,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types/"],
     "baseUrl": "./",
     "paths": {
-      "@": ["src"],
-      "src": ["src"]
-    },
-    "typeRoots": [ "./node_modules/@types/" ]
-  }
+      "@/*": ["src/*"]
+    }
+  },
+  "compileOnSave": true
 }

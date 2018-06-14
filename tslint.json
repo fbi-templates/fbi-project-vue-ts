@@ -4,6 +4,7 @@
     "require": true
   },
   "rules": {
+    "space-before-function-paren": false,
     "no-consecutive-blank-lines": false
   }
 }

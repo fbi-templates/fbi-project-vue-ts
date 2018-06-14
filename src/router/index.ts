@@ -1,30 +1,15 @@
-import Router from 'vue-router'
 import Vue from 'vue'
-import values from 'lodash/values'
-import beforeEachHooks from './beforeEachHooks'
-import Index from '../views/Index.vue'
+import Router from 'vue-router'
+import Index from '@/pages/Index.vue'
 
 Vue.use(Router)
 
-const routerInstance = new Router({
+export default new Router({
   routes: [
     {
-      path: '/index',
+      path: '/',
       name: 'Index',
-      component: Index,
-      meta: {
-        title: '首页'
-      }
-    },
-    {
-      path: '*',
-      redirect: '/index'
+      component: Index
     }
   ]
 })
-
-values(beforeEachHooks).forEach(hook => {
-  routerInstance.beforeEach(hook)
-})
-
-export default routerInstance

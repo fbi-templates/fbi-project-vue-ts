@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: 'app'
+  name: 'App'
 }
 </script>
 
-<style>
-@import "./static/css/index.css";
-
+<style lang="postcss">
+@import './assets/css/base.css';
 #app {
-  width: 100%;
-  height: 100%;
+  text-align: center;
+  color: $color;
 }
 </style>

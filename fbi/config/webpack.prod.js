@@ -19,7 +19,7 @@ const needCopy = fs.existsSync(staticPath)
 
 const config = {
   entry: {
-    app: path.join(root, 'src/index.js')
+    app: path.join(root, 'src/index.ts')
   },
   output: {
     path: path.join(root, ctx.options.server.root, 'assets'),
@@ -52,6 +52,7 @@ const config = {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
+                sourceMap: false,
                 plugins: Object.keys(ctx.options.postcss).map(item => {
                   return require(`${item}`)(ctx.options.postcss[item])
                 })
@@ -95,7 +96,7 @@ const config = {
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
-      cssProcessorOptions: {safe: true}
+      cssProcessorOptions: { safe: true }
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),

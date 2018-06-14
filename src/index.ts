@@ -1,17 +1,17 @@
-import './class-component-hooks'
-import App from './App.vue'
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import store from './store/index'
-import router from './router/index'
-import global from './global'
+import App from '@/App.vue'
+import router from '@/router/index'
+import Global from '@/global/index'
 
-// sync(store, router)
-global.init()
+Vue.config.productionTip = false
+new Global(Vue)
 
-const app = new Vue({
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
   router,
-  store,
-  ...App
+  components: { App },
+  template: '<App/>'
 })
-
-app.$mount('#app')
