@@ -5,7 +5,6 @@ import BaseIcon from '@/components/BaseIcon.vue'
 interface IHelpers {
   $apis?: Object
   $util?: Object
-  $dialog?: Object
 }
 
 class Global {

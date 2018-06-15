@@ -29,30 +29,6 @@ class Util {
     }
     return fmt
   }
-  getFormatBankStr(str: string): string {
-    return `${str}`
-      .replace(/[^\d]/g, '')
-      .split('')
-      .map((item, index) => {
-        if (index && index % 4 === 0) {
-          return ' ' + item
-        }
-        return item
-      })
-      .join('')
-  }
-  getFormatBirthday(date: string, symbol: string = '-'): string {
-    if (!date) {
-      return ''
-    }
-    let birthday = new Date(date)
-    let year = birthday.getFullYear()
-    let mouth: string | number = birthday.getMonth() + 1
-    mouth = mouth > 9 ? mouth : '0' + mouth
-    let day: string | number = birthday.getDate()
-    day = day > 9 ? day : '0' + day
-    return `${year}${symbol}${mouth}${symbol}${day}`
-  }
   query(search) {
     let str = search || window.location.search
     let objURL: Object = {}
@@ -93,15 +69,6 @@ class Util {
   isLegalMobile(str: string): boolean {
     let pattern = /^1(3|4|5|7|8)\d{9}$/
     return pattern.test(str)
-  }
-  getClearNumber(formatNumber: string): string {
-    return `${formatNumber}`.replace(/[^\d]/g, '')
-  }
-  getClientEnv(): string {
-    let ua = window.navigator.userAgent
-    let cardNiuMatch = ua.match(/mymoneysms/gi)
-    let isCardNiu = cardNiuMatch && cardNiuMatch.length > 0
-    return isCardNiu ? 'cardniu' : 'mymoney'
   }
   /* -----------------------------sessionStorage------------------------------------ */
   setStorage(name: string, content: any) {
