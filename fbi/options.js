@@ -94,5 +94,13 @@ module.exports = {
       'babel-preset-stage-2'
     ],
     plugins: ['transform-decorators-legacy']
+  },
+
+  postcss: {
+    precss: {},
+    'postcss-import': {},
+    'postcss-url': {},
+    // to edit target browsers: use "browserslist" field in package.json
+    autoprefixer: {}
   }
 }
